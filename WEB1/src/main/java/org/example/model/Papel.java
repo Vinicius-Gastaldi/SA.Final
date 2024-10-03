@@ -6,5 +6,5 @@ public enum Papel {
     SquadLeader,
     Desenvolvedor,
     funcionario,
-    usuario;
+    usuario
 }

@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UsuarioService {
+
     // Inclusão de Usuario
     public boolean incluirUsuario(Usuario usuario) throws ClassNotFoundException {
         String sql = "INSERT INTO usuario (email, senha, dev_id) VALUES (?, ?, ?)"; // Incluí as colunas
