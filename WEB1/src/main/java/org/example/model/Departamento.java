@@ -16,15 +16,12 @@ public class Departamento {
     public int getIdDepto() {
         return idDepto;
     }
-
     public void setIdDepto(int idDepto) {
         this.idDepto = idDepto;
     }
-
     public String getDescDepto() {
         return descDepto;
     }
-
     public void setDescDepto(String descDepto) {
         this.descDepto = descDepto;
     }
