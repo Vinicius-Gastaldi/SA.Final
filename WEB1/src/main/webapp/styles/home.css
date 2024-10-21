@@ -19,7 +19,7 @@ body {
 }
 
 .sidebar {
-    width: 250px;
+    width: 35vh;
     background-color: #f0dab6; /* Fundo da sidebar */
     padding: 20px;
     display: flex;
@@ -104,6 +104,8 @@ i.fa-tasks {
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
+    margin-left: 8vh;
+    margin-right: 8vh;
 }
 
 .header {
@@ -124,6 +126,7 @@ i.fa-tasks {
 .header .user-profile {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .header .user-profile img {
@@ -140,8 +143,6 @@ i.fa-tasks {
     display: flex;
     gap: 20px;
     flex-grow: 1;
-    margin-left: 2vh;
-    margin-right: 2vh;
     margin-bottom: 5vh;
 }
 
@@ -194,6 +195,7 @@ i.fa-tasks {
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    font-size:large;
 }
 
 .add-task-btn:hover {
@@ -218,7 +220,8 @@ i.fa-tasks {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; 
-    margin-bottom: 20px; 
+    margin-bottom: 45px; 
+    margin-top: 10vh;
 }
 
 
