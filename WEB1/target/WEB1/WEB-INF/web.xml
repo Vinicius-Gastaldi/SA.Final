@@ -38,4 +38,15 @@
         <url-pattern>/UsuarioController</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>org.example.filter.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/home.html</url-pattern>  <!-- Apply to specific pages -->
+        <url-pattern>/secure/*</url-pattern>  <!-- Or apply to all pages under a directory -->
+    </filter-mapping>
+
 </web-app>
