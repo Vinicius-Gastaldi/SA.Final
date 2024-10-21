@@ -12,7 +12,7 @@ public class UsuarioService {
 
     // Inclusão de Usuario
     public boolean incluirUsuario(Usuario usuario) throws ClassNotFoundException {
-        String sql = "INSERT INTO usuario (email, senha, dev_id) VALUES (?, ?, ?)"; // Incluí as colunas
+        String sql = "INSERT INTO usuario (email, senha, dev_id, papel) VALUES (?, ?, ?, ?)"; // Incluí a coluna papel
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
@@ -20,7 +20,9 @@ public class UsuarioService {
             stm.setString(1, usuario.getEmail());
             stm.setString(2, usuario.getSenha());
             stm.setInt(3, usuario.getDevId());
-            stm.execute();
+            stm.setInt(4, usuario.getPapelId());
+
+            stm.executeUpdate(); // use executeUpdate() para INSERT, UPDATE ou DELETE
 
         } catch (SQLException e) {
             System.out.println("Erro na inclusão do usuário: " + e.getMessage());
@@ -29,28 +31,33 @@ public class UsuarioService {
         return true;
     }
 
-    // Autenticação do usuário
-    public Usuario autenticarUsuario(Usuario usuario) throws ClassNotFoundException {
-        String sql = "SELECT email FROM usuario WHERE email = ? AND senha = ?";
-        Usuario usu = null;
+
+    public boolean autenticarUsuario(Usuario usuario) throws ClassNotFoundException {
+        String sql = "SELECT 1 FROM usuario WHERE email = ? AND senha = ?"; // Query to check if the user exists
 
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
-            // Usando os valores do objeto 'usuario'
+            // Set the email and password from the passed Usuario object
             stm.setString(1, usuario.getEmail());
             stm.setString(2, usuario.getSenha());
+
             ResultSet rs = stm.executeQuery();
 
+            // Return true if user exists, false otherwise
             if (rs.next()) {
-                usu = new Usuario();
-                usu.setEmail(rs.getString("email"));
+                System.out.println("Usuário autenticado: " + usuario.getEmail());
+                System.out.println("Senha: " + usuario.getSenha());
+                return true;
+            } else {
+                System.out.println("Falha na autenticação: " + usuario.getEmail());
+                System.out.println("Senha: " + usuario.getSenha());
+                return false;
             }
 
         } catch (SQLException e) {
-            System.out.println("Erro na autenticação do usuário: " + e.getMessage());
-            return null;
+            System.out.println("Erro ao autenticar o usuário: " + e.getMessage());
+            return false;
         }
-        return usu;
     }
 }
