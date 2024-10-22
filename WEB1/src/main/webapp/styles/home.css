@@ -271,7 +271,6 @@ p {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: #5C5C5C;
 }
 
 .task-card .dateandicons .date {
@@ -280,8 +279,10 @@ p {
     font-style: normal;
 }
 
+
 .task-card p {
     margin-bottom: 5px;
+    color: #5C5C5C;
 }
 
 .task-card .dateandicons {
