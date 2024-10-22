@@ -238,7 +238,7 @@ i.fa-arrow-left {
 }
 
 .task-card .title-task {
-    margin-bottom: 0;
+    margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -254,14 +254,30 @@ ol {
 
 
 .task-card {
-    background-color: #f0f4f8;
-    padding: 10px;
+    background-color: #FFFFFF;
+    padding: 15px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    border-color: #CAD9F6;
     flex-direction: column;
+    border-style: solid;
+    border-width: 2px;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #5C5C5C;
+}
+
+.task-card .dateandicons .date {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .task-card p {
@@ -270,13 +286,25 @@ ol {
 
 .task-card .dateandicons {
     display: flex;
-    flex-direction: row;
-    gap: 70px;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 10px;
 }
 
 .task-card .icons {
     display: flex;
     gap: 10px;
+}
+
+.task-card .dateandicons i.fa-pen-to-square {
+    color: #3D3D3D;
+    font-size: 20px;
+}
+
+.task-card .dateandicons i.fa-trash {
+    color: #B93A13;
+    font-size: 18px;
 }
 
 .task-card .icons a {
@@ -299,7 +327,7 @@ ol {
 }
 
 .title-progresso .fa-hourglass {
-    font-size: 22px;
+    font-size: 20px;
     margin-right: 8px;
 }
 
