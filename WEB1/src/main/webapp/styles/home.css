@@ -188,6 +188,11 @@ i.fa-arrow-left {
     width: 150%;
 }
 
+.header input[type="search"]:focus {
+    outline: none;
+    border: none;
+  }
+
 .header .user-profile {
     display: flex;
     align-items: center;
@@ -248,11 +253,18 @@ ol {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .task-card p {
     margin-bottom: 5px;
+}
+
+.task-card .dateandicons {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
 }
 
 .task-card .icons {
