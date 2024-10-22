@@ -227,7 +227,19 @@ i.fa-arrow-left {
 .column h2 {
     font-size: 20px;
     margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
+
+ol {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+
+
 
 .task-card {
     background-color: #f0f4f8;
@@ -251,6 +263,7 @@ i.fa-arrow-left {
 .task-card .icons a {
     color: #354f52;
     text-decoration: none;
+    margin-left: 10px;
 }
 
 .task-card .icons a:hover {
@@ -304,5 +317,7 @@ i.fa-arrow-left {
     color: #025E73;
     font-size: 40px;
 }
+
+
 
 
