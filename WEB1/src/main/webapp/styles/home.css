@@ -230,8 +230,15 @@ i.fa-arrow-left {
 }
 
 .column h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.task-card .title-task {
+    margin-bottom: 0;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-style: normal;
@@ -276,6 +283,33 @@ ol {
     color: #354f52;
     text-decoration: none;
     margin-left: 10px;
+}
+
+.title-pendencia {
+    color: #14367B;
+}
+
+.title-pendencia .fa-square {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.title-progresso {
+    color: #8F4F00;
+}
+
+.title-progresso .fa-hourglass {
+    font-size: 22px;
+    margin-right: 8px;
+}
+
+.title-pronto {
+    color: #81290E;
+}
+
+.title-pronto .fa-square-check {
+    font-size: 22px;
+    margin-right: 5px;
 }
 
 .task-card .icons a:hover {
