@@ -16,6 +16,7 @@ body {
     background-color: #F9F3F3;
     height: 100%;
     min-height: 100vh;
+    max-height: 100vh;
 }
 
 
@@ -227,6 +228,8 @@ i.fa-arrow-left {
     
     border-style: solid;
     border-width: 2px;
+    max-height: 600px;
+
 }
 
 .column h2 {
