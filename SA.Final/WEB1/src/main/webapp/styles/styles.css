@@ -2,8 +2,8 @@
 
 :root {
 
-  --white-color: hsl(0, 0%, 100%);
-  --black-color: hsl(0, 0%, 0%);
+  --white-color: white;
+  --black-color: black;
 
   --body-font: "Poppins", sans-serif;
   --h1-font-size: 1.75rem;
@@ -26,7 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(180deg, #f47f19, #d08a34);
+  background: linear-gradient(180deg, #e7ebf0, #025E73);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -35,7 +35,7 @@ input,
 button {
   font-size: var(--normal-font-size);
   font-family: var(--body-font);
-  color: aliceblue;
+  color: #025E73;
 }
 
 body {
@@ -171,7 +171,7 @@ img {
   font-weight: var(--font-medium);
   cursor: pointer;
   margin-bottom: 2rem;
-  background-color: #025E73;
+  background-color: white;
 }
 .login__register {
   text-align: center;

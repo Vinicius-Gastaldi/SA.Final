@@ -13,15 +13,17 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    background-color: #f5f5f5;
+    background-color: #F9F3F3;
     height: 100%;
     min-height: 100vh;
+    max-height: 100vh;
 }
 
+
 .sidebar {
-    width: 250px;
-    background-color: #f0dab6; /* Fundo da sidebar */
-    padding: 20px;
+    width: 35vh;
+    background-color: #E3C2A0; /* Fundo da sidebar */
+    padding: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,8 +32,13 @@ body {
 
 .sidebar h1 {
     font-size: 24px;
-    color: #354f52;
+    color: #3D3D3D;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Remover marcadores da lista */
@@ -48,7 +55,7 @@ body {
 .sidebar ul li a {
     text-decoration: none;
     font-size: 18px;
-    color: #354f52;
+    color: #025E73;
     background-color: #e7ebf0; /* Cor de fundo dos itens não selecionados */
     padding: 10px 15px;
     border-radius: 8px;
@@ -56,6 +63,10 @@ body {
     flex-direction: row;
     align-items: center; /* Para alinhar o ícone com o texto */
     transition: background-color 0.3s ease, color 0.3s ease;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .sidebar ul li a:hover {
@@ -64,19 +75,39 @@ body {
 
 /* Estilos para o link ativo */
 .sidebar ul li a.active {
-    background-color: #2a9d8f; /* Cor de fundo do item ativo */
-    color: white; /* Cor do texto no item ativo */
+    background-color: #025E73; /* Cor de fundo do item ativo */
+    color: #E3C2A0; /* Cor do texto no item ativo */
 }
 
 /* Ícone dentro do link ativo */
 .sidebar ul li a.active i.fa-tasks {
-    color: white; /* Muda a cor do ícone quando o link estiver ativo */
+    color: #E3C2A0; /* Muda a cor do ícone quando o link estiver ativo */
 }
 
 i.fa-tasks {
-    color: #2a9d8f;
-    font-size: 24px;
+    color: #025E73;
+    font-size: 18px;
     margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+i.fa-user {
+    color: #025E73;
+    font-size: 18px;
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+i.fa-file {
+    color: #025E73;
+    font-size: 18px;
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+.sidebar ul li a.active i.fa-user {
+    color: #E3C2A0; /* Muda a cor do ícone quando o link estiver ativo */
+}
+
+.sidebar ul li a.active i.fa-file {
+    color: #E3C2A0; /* Muda a cor do ícone quando o link estiver ativo */
 }
 
 
@@ -85,25 +116,43 @@ i.fa-tasks {
 }
 
 .logout button {
-    background-color: #e63946;
-    color: white;
+    background-color: #FDF0EC;
+    color: #81290E;
     padding: 10px;
     border: none;
     width: 100%;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .logout button:hover {
-    background-color: #d62828;
+    background-color: #81290E;
+    color: #FDF0EC;
+    border-radius: 8px;
+}
+
+i.fa-arrow-left {
+    font-size: 15px;
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    margin-left: 10px;
 }
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    min-height: 100vh; 
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    margin-left: 10vh;
+    margin-right: 10vh;
 }
 
 .header {
@@ -111,37 +160,63 @@ i.fa-tasks {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.search-bar {
+    border: 2px solid #EFEFEF;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar i.fa-magnifying-glass {
+    font-size: 20px;
+    margin-right: 20px;
 }
 
 .header input[type="search"] {
     padding: 10px;
     font-size: 16px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #F9F3F3;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 150%;
+}
+
+.header input[type="search"]:focus {
+    outline: none;
+    border: none;
 }
 
 .header .user-profile {
     display: flex;
     align-items: center;
+    gap: 30px;
 }
 
 .header .user-profile img {
-    width: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    margin-bottom: 4px;
 }
 
 .header .user-profile .user-name {
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 20px;
+    color: #3D3D3D;
 }
 
 .dashboard {
     display: flex;
-    gap: 20px;
+    gap: 50px;
     flex-grow: 1;
-    margin-left: 2vh;
-    margin-right: 2vh;
     margin-bottom: 5vh;
 }
 
@@ -150,26 +225,75 @@ i.fa-tasks {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    border-style: solid;
+    border-width: 2px;
+    max-height: 600px;
+
 }
 
 .column h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
+.task-card .title-task {
+    margin-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
 .task-card {
-    background-color: #f0f4f8;
-    padding: 10px;
+    background-color: #FFFFFF;
+    padding: 15px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    border-color: #CAD9F6;
+    flex-direction: column;
+    border-style: solid;
+    border-width: 2px;
 }
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.task-card .dateandicons .date {
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 .task-card p {
     margin-bottom: 5px;
+    color: #5C5C5C;
+}
+
+.task-card .dateandicons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .task-card .icons {
@@ -177,48 +301,102 @@ i.fa-tasks {
     gap: 10px;
 }
 
+.task-card .dateandicons i.fa-pen-to-square {
+    color: #3D3D3D;
+    font-size: 20px;
+}
+
+.task-card .dateandicons i.fa-trash {
+    color: #B93A13;
+    font-size: 18px;
+}
+
 .task-card .icons a {
     color: #354f52;
     text-decoration: none;
+    margin-left: 10px;
+}
+
+.title-pendencia {
+    color: #14367B;
+}
+
+.title-pendencia .fa-square {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.title-progresso {
+    color: #8F4F00;
+}
+
+.title-progresso .fa-hourglass {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.title-pronto {
+    color: #81290E;
+}
+
+.title-pronto .fa-square-check {
+    font-size: 22px;
+    margin-right: 5px;
 }
 
 .task-card .icons a:hover {
-    color: #2a9d8f;
+    color: #025E73;
 }
 
 .add-task-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #2a9d8f;
+    background-color: #025E73;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    font-size:large;
 }
 
 .add-task-btn:hover {
-    background-color: #21867a;
+    background-color: #025E73;
 }
 
 /* Column colors */
 .pendente {
-    background-color: #d0e8ff;
+    background-color: #EEF2FC;
+    border-color: #CAD9F6;
 }
 
 .progresso {
-    background-color: #fff3cd;
+    background-color: #FFF6EB;
+    border-color: #FFE4C2;
 }
 
 .pronto {
-    background-color: #ffe5d9;
+    background-color: #FDF0EC;
+    border-color: #FAD0C6;
 }
 
 .titulo-dashboard {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
-    margin-bottom: 20px; 
+    align-items: center;
+    margin-bottom: 45px;
+    margin-top: 10vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
+.titulo-dashboard h1 {
+    color: #025E73;
+    font-size: 40px;
+}
+
+p {
+    line-height: 18px;
+}
 
