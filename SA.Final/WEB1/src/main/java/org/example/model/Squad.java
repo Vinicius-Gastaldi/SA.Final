@@ -1,22 +1,22 @@
 package org.example.model;
 
 public class Squad {
-    private int Id;
+    private int id;
     private String Nome;
     private String Descricao;
-    private int deptoId;
 
     public Squad() {}
+
     public Squad(String nome, String descricao, int deptoId) {
         this.Nome = nome;
         this.Descricao = descricao;
-        this.deptoId = deptoId;
     }
+
     public int getId() {
-        return Id;
+        return id;
     }
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
     public String getNome() {
         return Nome;
@@ -29,11 +29,5 @@ public class Squad {
     }
     public void setDescricao(String descricao) {
         Descricao = descricao;
-    }
-    public int getDeptoId() {
-        return deptoId;
-    }
-    public void setDeptoId(int deptoId) {
-        this.deptoId = deptoId;
     }
 }

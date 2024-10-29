@@ -14,12 +14,12 @@
     <!-- Servlet definitions
 
     <servlet>
-        <servlet-name>MainController</servlet-name>
+        <servlet-nome>MainController</servlet-nome>
         <servlet-class>your.package.controllers.MainController</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MainController</servlet-name>
+        <servlet-nome>MainController</servlet-nome>
         <url-pattern>/yourpath/*</url-pattern>
     </servlet-mapping>
 
@@ -37,5 +37,34 @@
         <servlet-name>UsuarioController</servlet-name>
         <url-pattern>/UsuarioController</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DesenvolvedorController</servlet-name>
+        <servlet-class>org.example.controller.DesenvolvedorController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DesenvolvedorController</servlet-name>
+        <url-pattern>/DesenvolvedorController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SquadController</servlet-name>
+        <servlet-class>org.example.controller.SquadController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SquadController</servlet-name>
+        <url-pattern>/SquadController</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>org.example.filter.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/home.html</url-pattern>  <!-- Apply to specific pages -->
+        <url-pattern>/secure/*</url-pattern>  <!-- Or apply to all pages under a directory -->
+    </filter-mapping>
 
 </web-app>

@@ -1,12 +1,12 @@
 package org.example.model;
 
-public class Status {
-    private int id;       // ID do Status
-    private String nome;  // Nome do Status (e.g., Pendencia, em prgresso, etc.)
+public class Acesso {
+    private int id;       // ID do Acesso
+    private String nome;  // Nome do Status (Ex: Bloqueado, Inativado, etc.)
 
-    public Status() {}
+    public Acesso() {}
 
-    public Status(int id, String nome) {
+    public Acesso(int id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -26,6 +26,6 @@ public class Status {
 
     @Override
     public String toString() {
-        return "Status{id=" + id + ", nome='" + nome + '\'' + '}';
+        return "Acesso{id=" + id + ", nome='" + nome + '\'' + '}';
     }
 }

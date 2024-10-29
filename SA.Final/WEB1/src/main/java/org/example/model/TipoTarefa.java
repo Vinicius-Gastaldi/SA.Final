@@ -2,15 +2,22 @@ package org.example.model;
 
 public class TipoTarefa {
 
-    private int idTipoTarefa;
+    private int id;
     private String Titulo;
     private String descricao;
 
-    public int getIdTipoTarefa() {
-        return idTipoTarefa;
+    public TipoTarefa() {}
+
+    public TipoTarefa(int id, String Titulo, String descricao) {
+        this.id = id;
+        this.Titulo = Titulo;
+        this.descricao = descricao;
     }
-    public void setIdTipoTarefa(int idTipoTarefa) {
-        this.idTipoTarefa = idTipoTarefa;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
     public String getTitulo() {
         return Titulo;
@@ -24,5 +31,6 @@ public class TipoTarefa {
     public String getDescricao() {
         return descricao;
     }
+
 
 }

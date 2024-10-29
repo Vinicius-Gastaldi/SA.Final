@@ -2,133 +2,133 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nome="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/home.css" media="screen" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Home Page</title>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div>
-            <h1>ShutDawn</h1>
-            <ul>
-                <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Dashboard</p></a></li>
-                <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Usuários</p></a></li>
-                <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Relatório</p></a></li>
-            </ul>
-        </div>
-        <div class="logout">
-            <button>Log out</button>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div>
+        <h1>ShutDawn</h1>
+        <ul>
+            <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Dashboard</p></a></li>
+            <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Usuários</p></a></li>
+            <li><a href="#" class="sidebar-link"><i class="fas fa-tasks"></i> <p>Relatório</p></a></li>
+        </ul>
+    </div>
+    <div class="logout">
+        <button type="button" class="login__button" onclick="window.location.href='index.html'">Log out</button>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="header">
+        <input type="search" placeholder="Buscar...">
+        <div class="user-profile">
+            <span class="user-nome">Nome do Usuário</span>
+            <img src="user-image-url" alt="User">
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <div class="header">
-            <input type="search" placeholder="Buscar...">
-            <div class="user-profile">
-                <span class="user-name">Nome do Usuário</span>
-                <img src="user-image-url" alt="User">
-            </div>
-        </div>
-
-        <div class="titulo-dashboard">
-            <h2>Dashboard Tarefas</h2>
-            <a href="#" class="add-task-btn">Nova Tarefa +</a>
-        </div>
-        
-        <div class="dashboard">
-            <!-- Pendência Column -->
-            <div class="column pendente">
-                <h2>Pendência</h2>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Progresso Column -->
-            <div class="column progresso">
-                <h2>Progresso</h2>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pronto Column -->
-            <div class="column pronto">
-                <h2>Pronto</h2>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-
-                <div class="task-card">
-                    <div>
-                        <p><strong>Manutenção</strong></p>
-                        <p>Descrição da tarefa acima, explicando o que ela significa.</p>
-                        <p>2024-03-23 10:00</p>
-                    </div>
-                    <div class="icons">
-                        <a href="#">✏️</a>
-                        <a href="#">🗑️</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
+    <div class="titulo-dashboard">
+        <h2>Dashboard Tarefas</h2>
+        <a href="#" class="add-task-btn">Nova Tarefa +</a>
     </div>
-    <script src="scripts/home.js"></script>
+
+    <div class="dashboard">
+        <!-- Pendência Column -->
+        <div class="column pendente">
+            <h2>Pendência</h2>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progresso Column -->
+        <div class="column progresso">
+            <h2>Progresso</h2>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pronto Column -->
+        <div class="column pronto">
+            <h2>Pronto</h2>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+
+            <div class="task-card">
+                <div>
+                    <p><strong>Manutenção</strong></p>
+                    <p>Descrição da tarefa acima, explicando o que ela significa.</p>
+                    <p>2024-03-23 10:00</p>
+                </div>
+                <div class="icons">
+                    <a href="#">✏️</a>
+                    <a href="#">🗑️</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="scripts/home.js"></script>
 </body>
 </html>
