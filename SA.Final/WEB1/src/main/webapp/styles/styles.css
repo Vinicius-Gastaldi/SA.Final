@@ -173,6 +173,21 @@ img {
   margin-bottom: 2rem;
   background-color: white;
 }
+
+.login__button-erro {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
 .login__register {
   text-align: center;
 }
@@ -208,4 +223,14 @@ img {
   .login__title {
     font-size: 2rem;
   }
+}
+
+.error-box {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  margin-bottom: 2rem;
+  background-color: white;
 }

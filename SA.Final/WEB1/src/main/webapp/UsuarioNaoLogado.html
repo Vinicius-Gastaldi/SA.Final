@@ -2,9 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UsuarioNaoLogado.</title>
+    <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Login Error</title>
+    <link rel="icon" href="img/logo1.png">
 </head>
 <body>
+<div class="login__form">
+    <h1 class="login__title">Session Error</h1>
 
+    <div class="login__logo">
+        <img src="img/logo1.png" alt="Logo" class="logo__image">
+    </div>
+
+    <div class="login__actions">
+        <div class="login__button-erro">
+            <i class="ri-error-warning-line login__icon" style="color:red;"></i>
+            <div class="login__box-input">
+                <div >
+                    <p class="login__error-message">Oops! Sua sessão expirou. Por favor tente novamente.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login__actions">
+        <button onclick="window.location.href='index.html'" class="login__button">Back to Login</button>
+    </div>
+</div>
+
+<style>
+    /* Additional error styling if necessary */
+    .login__error-message {
+        color: red;
+        font-size: 1rem;
+        text-align: center;
+        justify-content: center;
+    }
+    .login__actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+</style>
 </body>
 </html>
