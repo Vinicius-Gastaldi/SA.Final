@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/home.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Consulta de Usuário</title>
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+    <div>
+        <h1>ShutDawn</h1>
+        <ul>
+            <li><a href="home.html" class="sidebar-link "><i class="fas fa-tasks"></i> <p>Dashboard</p></a></li>
+            <li><a href="usuario.html" class="sidebar-link active"><i class="fa-solid fa-user"></i> <p>Usuários</p></a></li>
+            <li><a href="#" class="sidebar-link"><i class="fa-solid fa-file"></i> <p>Relatórios</p></a></li>
+        </ul>
+    </div>
+    <div class="logout">
+        <button><i class="fa-solid fa-arrow-left"></i>Log out</button>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="header">
+        <div class="search-bar">
+            <input type="search" placeholder="Buscar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="user-profile">
+            <span class="user-name"><i class="fa-solid fa-question"></i></span>
+            <span class="user-name"><i class="fas fa-bell"></i></span>
+            <img src="img/person_24dp_3D3D3D_FILL0_wght400_GRAD0_opsz24.svg" alt="User">
+        </div>
+    </div>
+
+    <div class="titulo-dashboard">
+        <h1>Consultar Usuários</h1>
+            <a href="#" class="add-task-btn">Novo Usuário +</a>
+            <!-- Modal para criação e edição de tarefa -->
+            <div id="taskModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modalTitle">Novo Usuário</h2>
+                    <form id="taskForm">
+                        <label for="taskTitle">Nome</label>
+                        <input type="text" id="taskTitle" name="taskTitle" required>
+                        
+                        <label for="taskDescription">Função</label>
+                        <textarea id="taskDescription" name="taskDescription" required></textarea>
+                        
+                        <button type="submit" id="submitButton">Cadastrar Usuário</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+
+    
+    <!-- Modal de confirmação para exclusão -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmação de Exclusão</h2>
+            <p>Tem certeza de que deseja excluir esse usuário?</p>
+            <button id="confirmDelete" class="confirm-btn">Excluir</button>
+            <button id="cancelDelete" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+
+
+    <div class="consulta">
+        <!-- Pendência Column -->
+        <div class="user-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Função</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exemplo de Usuário -->
+                    <tr>
+                        <td>1</td>
+                        <td>João Silva</td>
+                        <td>joao.silva@email.com</td>
+                        <td>Administrador</td>
+                        <td>Ativo</td>
+                        <td>
+                            <a href="#" class="edit"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Maria Souza</td>
+                        <td>maria.souza@email.com</td>
+                        <td>Usuário</td>
+                        <td>Inativo</td>
+                        <td>
+                            <a href="#" class="edit"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="#" class="delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <!-- Adicione mais usuários conforme necessário -->
+                </tbody>
+            </table>
+        </div>
+</div>
+<script src="scripts/usuario.js"></script>
+</body>
+</html>

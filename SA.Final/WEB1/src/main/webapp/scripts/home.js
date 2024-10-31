@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     // Selecionar todos os links da sidebar
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+*/
 
 // MODAL TASKS
 const modal = document.getElementById("taskModal");
