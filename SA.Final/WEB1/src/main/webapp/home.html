@@ -55,6 +55,15 @@
                         <label for="taskDescription">Descrição</label>
                         <textarea id="taskDescription" name="taskDescription" required></textarea>
                         
+                        <label for="tipoSelect">Selecione o Status:</label>
+                        <select id="tipoSelect" name="tipo">
+                            <option value="manutencao">Manutenção</option>
+                            <option value="bug">Bug</option>
+                            <option value="front">Front</option>
+                        </select>
+
+                        <button type="submit" id="submitButton">Criar Tipo</button>
+
                         <label for="taskDate">Data</label>
                         <input type="datetime-local" id="taskDate" name="taskDate" required>
                         
