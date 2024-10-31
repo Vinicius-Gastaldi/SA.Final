@@ -15,3 +15,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Seleciona os elementos
+const modal = document.getElementById("taskModal");
+const openModalBtn = document.querySelector(".add-task-btn");
+const closeModalBtn = document.querySelector(".close");
+
+// Abre o modal ao clicar no botão
+openModalBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    modal.style.display = "block";
+});
+
+// Fecha o modal ao clicar no "X"
+closeModalBtn.addEventListener("click", function() {
+    modal.style.display = "none";
+});
+
+// Fecha o modal ao clicar fora do conteúdo
+window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
