@@ -311,6 +311,12 @@ p {
     font-size: 18px;
 }
 
+.task-card .dateandicons i.fa-rectangle-list {
+    color: #3D3D3D;
+    font-size: 20px;
+    margin-top: 1px;
+}
+
 .task-card .icons a {
     color: #354f52;
     text-decoration: none;
