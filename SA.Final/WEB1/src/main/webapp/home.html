@@ -45,11 +45,11 @@
     <div class="titulo-dashboard">
         <h1>Dashboard Tarefas</h1>
             <a href="#" class="add-task-btn">Nova Tarefa +</a>
-            <!-- Modal para criação de nova tarefa -->
+            <!-- Modal para criação e edição de tarefa -->
             <div id="taskModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h2>Nova Tarefa</h2>
+                    <h2 id="modalTitle">Nova Tarefa</h2>
                     <form id="taskForm">
                         <label for="taskTitle">Título</label>
                         <input type="text" id="taskTitle" name="taskTitle" required>
@@ -60,11 +60,41 @@
                         <label for="taskDate">Data</label>
                         <input type="datetime-local" id="taskDate" name="taskDate" required>
                         
-                        <button type="submit">Criar Tarefa</button>
+                        <button type="submit" id="submitButton">Criar Tarefa</button>
                     </form>
                 </div>
             </div>
     </div>
+
+    <!-- Modal para mudança de status -->
+    <div id="statusModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mudar Status</h2>
+            <form id="statusForm">
+                <label for="statusSelect">Selecione o Status:</label>
+                <select id="statusSelect" name="status">
+                    <option value="pendente">Pendência</option>
+                    <option value="progresso">Progresso</option>
+                    <option value="pronto">Pronto</option>
+                </select>
+                
+                <button type="submit">Salvar Status</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de confirmação para exclusão -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Confirmação de Exclusão</h2>
+            <p>Tem certeza de que deseja excluir esta tarefa?</p>
+            <button id="confirmDelete" class="confirm-btn">Excluir</button>
+            <button id="cancelDelete" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+
 
     <div class="dashboard">
         <!-- Pendência Column -->

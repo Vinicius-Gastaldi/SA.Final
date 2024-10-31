@@ -406,6 +406,8 @@ p {
     line-height: 18px;
 }
 
+
+
 .modal {
     display: none; /* Esconde o modal inicialmente */
     position: fixed;
@@ -446,4 +448,33 @@ p {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+/* Estilo específico para o modal de status, se necessário */
+#statusSelect {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Estilo para os botões de confirmação */
+.confirm-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.cancel-btn {
+    background-color: #5bc0de;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
