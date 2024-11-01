@@ -450,6 +450,15 @@ p {
     border-radius: 4px;
 }
 
+
+.modal-content label {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+
 /* Estilo específico para o modal de status, se necessário */
 #statusSelect {
     width: 100%;

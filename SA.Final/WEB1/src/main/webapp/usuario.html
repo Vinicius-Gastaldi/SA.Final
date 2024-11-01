@@ -43,7 +43,7 @@
     <div class="titulo-dashboard">
         <h1>Consultar Usuários</h1>
             <a href="#" class="add-task-btn">Novo Usuário +</a>
-            <!-- Modal para criação e edição de tarefa -->
+            <!-- Modal para criação e edição de usuário -->
             <div id="taskModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -51,10 +51,17 @@
                     <form id="taskForm">
                         <label for="taskTitle">Nome</label>
                         <input type="text" id="taskTitle" name="taskTitle" required>
-                        
-                        <label for="taskDescription">Função</label>
-                        <textarea id="taskDescription" name="taskDescription" required></textarea>
-                        
+
+                        <label for="taskTitle">Email</label>
+                        <input type="text" id="taskTitle" name="taskTitle" required>
+
+                        <label for="tipoSelect">Selecione o Papel:</label>
+                        <select id="tipoSelect" name="tipo">
+                            <option value="manutencao">Administrador</option>
+                            <option value="bug">Usuário</option>
+                            <option value="front">Desenvolvedor</option>
+                        </select>
+
                         <button type="submit" id="submitButton">Cadastrar Usuário</button>
                     </form>
                 </div>
