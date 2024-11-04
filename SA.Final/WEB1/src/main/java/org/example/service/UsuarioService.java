@@ -14,7 +14,7 @@ public class UsuarioService {
 
     // Inclusão de Usuario
     public boolean incluirUsuario(Usuario usuario) throws ClassNotFoundException {
-        String sql = "INSERT INTO usuario (email, senha, dev_Id, papel_id, acesso_id) VALUES (?, ?, ?, ?)"; // Incluí a coluna papel
+        String sql = "INSERT INTO usuario (email, senha, dev_Id, papel_id, acesso_id) VALUES (?, ?, ?, ?, ?)"; // Incluí a coluna papel
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
@@ -33,8 +33,9 @@ public class UsuarioService {
         }
         return true;
     }
+
     public boolean alterarUsuario(Usuario usuario) throws ClassNotFoundException {
-        String sql = "UPDATE usuario SET email = ?, senha = ?, dev_id = ?, papel_id = ?,acesso_id=? WHERE id = ?";
+        String sql = "UPDATE usuario SET email = ?, senha = ?, dev_id = ?, papel_id = ?, acesso_id = ? WHERE id = ?";
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
@@ -51,6 +52,7 @@ public class UsuarioService {
         }
         return true;
     }
+
     // Excluir Usuario
     public boolean excluirUsuario(int idUsuario) throws ClassNotFoundException {
         String sql = "DELETE FROM usuario WHERE id = ?";
@@ -94,7 +96,7 @@ public class UsuarioService {
     // Consultar um Usuario
     public Usuario consultaUsuario(int idUsuario) throws ClassNotFoundException {
         Usuario usuario = null;
-        String sql = "SELECT id, email, senha, dev_id, papel_id FROM usuario WHERE id = ?";
+        String sql = "SELECT id, email, senha, dev_id, papel_id, acesso_id FROM usuario WHERE id = ?";
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
@@ -117,33 +119,37 @@ public class UsuarioService {
         return usuario;
     }
 
-
+    // Authenticate user and retrieve role
     public boolean autenticarUsuario(Usuario usuario) throws ClassNotFoundException {
-        String sql = "SELECT 1 FROM usuario WHERE email = ? AND senha = ?"; // Query to check if the user exists
+        String sql = "SELECT id, papel_id, senha FROM usuario WHERE email = ?";
 
         try (Connection con = Conexao.conectar();
              PreparedStatement stm = con.prepareStatement(sql)) {
 
-            // Set the email and password from the passed Usuario object
             stm.setString(1, usuario.getEmail());
-            stm.setString(2, usuario.getSenha());
-
             ResultSet rs = stm.executeQuery();
 
-            // Return true if user exists, false otherwise
             if (rs.next()) {
-                System.out.println("Usuário autenticado: " + usuario.getEmail());
-                System.out.println("Senha: " + usuario.getSenha());
-                return true;
+                String storedPassword = rs.getString("senha");
+
+                // Directly compare the entered password with the stored password
+                if (usuario.getSenha().equals(storedPassword)) {
+                    usuario.setId(rs.getInt("id"));
+                    usuario.setPapelId(rs.getInt("papel_id"));
+                    System.out.println("Usuário autenticado: " + usuario.getEmail());
+                    return true;
+                } else {
+                    System.out.println("Falha na autenticação: senha incorreta para " + usuario.getEmail());
+                }
             } else {
-                System.out.println("Falha na autenticação: " + usuario.getEmail());
-                System.out.println("Senha: " + usuario.getSenha());
-                return false;
+                System.out.println("Usuário não encontrado: " + usuario.getEmail());
             }
 
         } catch (SQLException e) {
             System.out.println("Erro ao autenticar o usuário: " + e.getMessage());
-            return false;
         }
+        return false;
     }
+
+
 }

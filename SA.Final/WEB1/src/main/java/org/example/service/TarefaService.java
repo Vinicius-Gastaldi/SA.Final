@@ -56,12 +56,62 @@ public class TarefaService {
         }
     }
 
-    public List<Tarefa> listarTarefas() throws ClassNotFoundException {
-        return listarTarefasComFiltro(null, -1);
+    public List<Tarefa> listarTarefas(String tipoTarefaId, String statusId, Date dataInicio, Date dataFim, String desenvolvedorId) throws ClassNotFoundException {
+        return listarTarefasComFiltro(tipoTarefaId, statusId, dataInicio, dataFim, desenvolvedorId);
     }
 
-    public List<Tarefa> listarPorTipoTarefa(int tipoTarefaId) throws ClassNotFoundException {
-        return listarTarefasComFiltro("tipo_tarefa_id = ?", tipoTarefaId);
+    private List<Tarefa> listarTarefasComFiltro(String tipoTarefaId, String statusId, Date dataInicio, Date dataFim, String desenvolvedorId) throws ClassNotFoundException {
+        List<Tarefa> listaTarefas = new ArrayList<>();
+        StringBuilder sql = new StringBuilder("SELECT * FROM tarefa WHERE 1=1"); // Start with a valid SQL
+
+        // Add filters based on parameters
+        if (tipoTarefaId != null && !tipoTarefaId.isEmpty()) {
+            sql.append(" AND tipo_tarefa_id = ?");
+        }
+        if (statusId != null && !statusId.isEmpty()) {
+            sql.append(" AND status_id = ?");
+        }
+        if (dataInicio != null) {
+            sql.append(" AND data_inicio >= ?");
+        }
+        if (dataFim != null) {
+            sql.append(" AND data_fim <= ?");
+        }
+        if (desenvolvedorId != null && !desenvolvedorId.isEmpty()) {
+            sql.append(" AND desenvolvedor_id = ?");
+        }
+
+        try (Connection con = Conexao.conectar();
+             PreparedStatement stm = con.prepareStatement(sql.toString())) {
+
+            int index = 1; // For setting parameters
+
+            // Set parameters based on filters
+            if (tipoTarefaId != null && !tipoTarefaId.isEmpty()) {
+                stm.setInt(index++, Integer.parseInt(tipoTarefaId));
+            }
+            if (statusId != null && !statusId.isEmpty()) {
+                stm.setInt(index++, Integer.parseInt(statusId));
+            }
+            if (dataInicio != null) {
+                stm.setDate(index++, dataInicio);
+            }
+            if (dataFim != null) {
+                stm.setDate(index++, dataFim);
+            }
+            if (desenvolvedorId != null && !desenvolvedorId.isEmpty()) {
+                stm.setInt(index++, Integer.parseInt(desenvolvedorId));
+            }
+
+            try (ResultSet rs = stm.executeQuery()) {
+                while (rs.next()) {
+                    listaTarefas.add(criarTarefa(rs));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.log(Level.SEVERE, "Erro ao listar tarefas", e);
+        }
+        return listaTarefas;
     }
 
     public Tarefa consultaTarefa(int tarefaId) throws ClassNotFoundException {
@@ -79,29 +129,6 @@ public class TarefaService {
             LOGGER.log(Level.SEVERE, "Erro na consulta da tarefa", e);
         }
         return null;
-    }
-
-    private List<Tarefa> listarTarefasComFiltro(String whereClause, int tipoTarefaId) throws ClassNotFoundException {
-        List<Tarefa> listaTarefas = new ArrayList<>();
-        String sql = "SELECT * FROM tarefa";
-        if (whereClause != null) {
-            sql += " WHERE " + whereClause;
-        }
-        try (Connection con = Conexao.conectar();
-             PreparedStatement stm = con.prepareStatement(sql)) {
-
-            if (tipoTarefaId != -1) {
-                stm.setInt(1, tipoTarefaId);
-            }
-            try (ResultSet rs = stm.executeQuery()) {
-                while (rs.next()) {
-                    listaTarefas.add(criarTarefa(rs));
-                }
-            }
-        } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Erro ao listar tarefas", e);
-        }
-        return listaTarefas;
     }
 
     private void configurarParametrosTarefa(PreparedStatement stm, Tarefa tarefa) throws SQLException {
