@@ -354,6 +354,10 @@ p {
     color: #025E73;
 }
 
+.botoes {
+    gap: -5px;
+}
+
 .add-task-btn {
     display: inline-block;
     padding: 10px 20px;
